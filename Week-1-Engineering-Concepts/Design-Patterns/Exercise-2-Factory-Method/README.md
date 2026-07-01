@@ -24,6 +24,7 @@ A document management system needs to create different document types such as Wo
 
 ```bash
 javac *.java
+```
 
 ## How to Run
 java FactoryMethodDemo
