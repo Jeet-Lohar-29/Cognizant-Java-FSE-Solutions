@@ -27,4 +27,6 @@ javac *.java
 ```
 
 ## How to Run
+```bash
 java FactoryMethodDemo
+```
