@@ -1,0 +1,18 @@
+package com.cognizant.mockito;
+
+public class MyService {
+
+    private ExternalApi externalApi;
+
+    public MyService(ExternalApi externalApi) {
+        this.externalApi = externalApi;
+    }
+
+    public void fetchData() {
+
+        externalApi.connect();
+        externalApi.getData();
+
+    }
+
+}
