@@ -1,50 +1,139 @@
-# Handson 3 - Hibernate Annotations
+# Hands-on 4 – Difference between JPA, Hibernate and Spring Data JPA
 
 ## Objective
 
-Demonstrate Hibernate ORM using Java Annotations instead of XML mapping files.
+Understand the relationship between Java Persistence API (JPA), Hibernate and Spring Data JPA.
 
-## Technologies Used
+---
 
-- Java 17
-- Maven
-- Hibernate ORM 6
-- MySQL
-- SLF4J
+## What is JPA?
 
-## Annotations Used
+- JPA stands for Java Persistence API.
+- It is a specification (JSR 338).
+- It defines standard interfaces and annotations for Object Relational Mapping (ORM).
+- JPA itself does not contain any implementation.
+
+Examples:
 
 - @Entity
 - @Table
 - @Id
-- @GeneratedValue
-- @Column
+- EntityManager
 
-## Project Structure
+---
 
-- Employee.java
-- ManageEmployee.java
-- hibernate.cfg.xml
+## What is Hibernate?
 
-## Build
+- Hibernate is an ORM Framework.
+- Hibernate is one of the implementations of JPA.
+- Hibernate converts Java objects into database records.
+- Hibernate internally uses JDBC to communicate with the database.
 
-```bash
-mvn clean compile
+Extra Features:
+
+- HQL
+- Criteria API
+- Caching
+- Lazy Loading
+- Dirty Checking
+
+---
+
+## What is Spring Data JPA?
+
+Spring Data JPA is a framework built on top of JPA.
+
+It reduces boilerplate code by providing:
+
+- JpaRepository
+- CrudRepository
+- Automatic Query Methods
+- Transaction Management
+- Pagination
+- Sorting
+
+It still requires a JPA provider such as Hibernate.
+
+---
+
+## Architecture
+
+Application
+
+↓
+
+Spring Data JPA
+
+↓
+
+Hibernate (JPA Provider)
+
+↓
+
+JDBC
+
+↓
+
+MySQL Database
+
+---
+
+## Comparison
+
+| Feature | JPA | Hibernate | Spring Data JPA |
+|----------|-----|-----------|-----------------|
+| Type | Specification | ORM Framework | Spring Framework |
+| Implementation | ❌ | ✅ | ❌ |
+| Database Access | Through Provider | Direct ORM | Through Hibernate |
+| Boilerplate Code | Medium | High | Very Low |
+| Transaction Management | Manual | Manual | Automatic (@Transactional) |
+
+---
+
+## Hibernate Example
+
+```java
+Session session = factory.openSession();
+
+Transaction tx = session.beginTransaction();
+
+session.save(employee);
+
+tx.commit();
+
+session.close();
 ```
 
-## Run
+---
 
-```bash
-mvn exec:java
+## Spring Data JPA Example
+
+```java
+@Autowired
+private EmployeeRepository repository;
+
+@Transactional
+public void addEmployee(Employee employee){
+    repository.save(employee);
+}
 ```
 
-## Expected Output
+---
 
-- Hibernate connects to MySQL.
-- Creates/updates the EMPLOYEE table.
-- Inserts a sample employee record.
-- Prints the generated employee ID.
+## Advantages of Spring Data JPA
 
-## Learning Outcome
+- Less code
+- Repository pattern
+- Auto-generated CRUD methods
+- Easy transaction management
+- Better maintainability
 
-Learned how Hibernate uses annotations for entity mapping, eliminating the need for `Employee.hbm.xml`.
+---
+
+## Conclusion
+
+JPA defines the rules.
+
+Hibernate implements those rules.
+
+Spring Data JPA simplifies working with Hibernate by reducing boilerplate code.
