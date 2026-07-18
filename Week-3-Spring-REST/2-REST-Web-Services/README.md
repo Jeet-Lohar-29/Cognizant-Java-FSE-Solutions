@@ -133,3 +133,67 @@ http://localhost:8083/country
 ## Status
 
 ✔ Completed
+
+---
+
+# Hands-on 4
+
+## Title
+
+REST - Get All Countries
+
+## Objective
+
+- Create multiple Country beans in Spring XML.
+- Create a list of Country objects.
+- Expose a REST endpoint that returns all countries.
+- Test the REST API using Browser and Postman.
+
+## Technologies
+
+- Java 17
+- Spring Boot
+- Spring Web
+- Spring Core (XML Configuration)
+- REST API
+- SLF4J
+- Maven
+
+## Run
+
+```bash
+mvn spring-boot:run
+```
+
+## Test URL
+
+```
+http://localhost:8083/countries
+```
+
+## Expected Output
+
+```json
+[
+  {
+    "code": "IN",
+    "name": "India"
+  },
+  {
+    "code": "US",
+    "name": "United States"
+  },
+  {
+    "code": "JP",
+    "name": "Japan"
+  },
+  {
+    "code": "DE",
+    "name": "Germany"
+  }
+]
+```
+
+## Status
+
+✔ Completed
