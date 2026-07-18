@@ -197,3 +197,56 @@ http://localhost:8083/countries
 ## Status
 
 ✔ Completed
+
+---
+
+# Hands-on 5
+
+## Title
+
+REST - Get Country Based on Country Code
+
+## Objective
+
+- Create a Service layer.
+- Use `@PathVariable` to read the country code from the URL.
+- Return the matching country.
+- Perform case-insensitive search.
+- Test using Browser and Postman.
+
+## Technologies
+
+- Java 17
+- Spring Boot
+- Spring Web
+- Spring Core (XML Configuration)
+- REST API
+- SLF4J
+- Maven
+
+## Run
+
+```bash
+mvn spring-boot:run
+```
+
+## Test URLs
+
+```
+http://localhost:8083/countries/IN
+http://localhost:8083/countries/DE
+http://localhost:8083/countries/in
+```
+
+## Expected Output
+
+```json
+{
+  "code": "IN",
+  "name": "India"
+}
+```
+
+## Status
+
+✔ Completed
