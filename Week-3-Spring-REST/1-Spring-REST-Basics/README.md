@@ -207,3 +207,44 @@ mvn spring-boot:run
 ## Status
 
 ✔ Completed
+
+---
+
+# Hands-on 6
+
+## Title
+
+Spring Core - Load List of Countries from Spring Configuration XML
+
+## Objective
+
+- Create multiple Country beans using Spring XML.
+- Create an ArrayList of Country objects.
+- Load the list using ApplicationContext.
+- Display the list of countries using logging.
+
+## Technologies
+
+- Java 17
+- Spring Boot
+- Spring Core
+- Spring XML Configuration
+- Spring Collections
+- SLF4J
+- Maven
+
+## Run
+
+```bash
+mvn spring-boot:run
+```
+
+## Expected Output
+
+- START log
+- List of four Country objects
+- END log
+
+## Status
+
+✔ Completed

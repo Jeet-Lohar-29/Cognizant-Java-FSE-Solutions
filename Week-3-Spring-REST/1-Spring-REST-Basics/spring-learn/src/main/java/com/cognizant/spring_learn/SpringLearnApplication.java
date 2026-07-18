@@ -11,20 +11,24 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.ArrayList;
+
 @SpringBootApplication
 public class SpringLearnApplication {
 
     private static final Logger LOGGER =
             LoggerFactory.getLogger(SpringLearnApplication.class);
 
-    public static void main(String[] args) throws Exception {
+        public static void main(String[] args) throws Exception {
 
         SpringApplication.run(SpringLearnApplication.class, args);
 
         displayDate();
 
         displayCountry();
-    }
+
+        displayCountries();
+        }
 
     public static void displayDate() throws Exception {
 
@@ -58,6 +62,21 @@ public class SpringLearnApplication {
 
         LOGGER.debug("Country 1 : {}", country);
         LOGGER.debug("Country 2 : {}", anotherCountry);
+
+        LOGGER.info("END");
+        }
+
+        public static void displayCountries() {
+
+        LOGGER.info("START");
+
+        ApplicationContext context =
+                new ClassPathXmlApplicationContext("country.xml");
+
+        ArrayList<Country> countries =
+                context.getBean("countryList", ArrayList.class);
+
+        LOGGER.debug("Countries : {}", countries);
 
         LOGGER.info("END");
         }
