@@ -36,3 +36,50 @@ mvn spring-boot:run
 ## Status
 
 ✔ Completed
+
+---
+
+# Hands-on 2
+
+## Title
+
+Hello World RESTful Web Service
+
+## Objective
+
+- Create a REST Controller.
+- Implement a GET endpoint.
+- Return "Hello World!!".
+- Test the REST service using a browser and Postman.
+- Include START and END logs.
+
+## Technologies
+
+- Java 17
+- Spring Boot
+- Spring Web
+- REST API
+- SLF4J
+- Maven
+
+## Run
+
+```bash
+mvn spring-boot:run
+```
+
+## Test URL
+
+```
+http://localhost:8083/hello
+```
+
+## Expected Output
+
+```
+Hello World!!
+```
+
+## Status
+
+✔ Completed
