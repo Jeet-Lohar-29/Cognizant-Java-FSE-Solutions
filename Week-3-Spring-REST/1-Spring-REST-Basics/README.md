@@ -4,7 +4,7 @@
 
 ---
 
-### Hands-on 1
+# Hands-on 1
 Create a Spring Web Project using Maven.
 
 ## Technologies Used
