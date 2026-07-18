@@ -2,6 +2,8 @@
 
 ## Module 1 - Spring REST Basics
 
+---
+
 ### Hands-on 1
 Create a Spring Web Project using Maven.
 
