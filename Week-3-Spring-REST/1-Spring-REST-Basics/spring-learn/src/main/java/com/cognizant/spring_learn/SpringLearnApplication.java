@@ -43,7 +43,7 @@ public class SpringLearnApplication {
         LOGGER.info("END");
     }
 
-    public static void displayCountry() {
+        public static void displayCountry() {
 
         LOGGER.info("START");
 
@@ -53,9 +53,13 @@ public class SpringLearnApplication {
         Country country =
                 context.getBean("country", Country.class);
 
-        LOGGER.debug("Country : {}", country);
+        Country anotherCountry =
+                context.getBean("country", Country.class);
+
+        LOGGER.debug("Country 1 : {}", country);
+        LOGGER.debug("Country 2 : {}", anotherCountry);
 
         LOGGER.info("END");
-    }
+        }
 
 }

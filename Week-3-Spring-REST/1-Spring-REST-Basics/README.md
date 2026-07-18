@@ -162,3 +162,48 @@ mvn spring-boot:run
 ## Status
 
 ✔ Completed
+
+---
+
+# Hands-on 5
+
+## Title
+
+Spring Core - Demonstration of Singleton Scope and Prototype Scope
+
+## Objective
+
+- Demonstrate Singleton Scope.
+- Demonstrate Prototype Scope.
+- Understand the difference between Singleton and Prototype beans.
+
+## Technologies
+
+- Java 17
+- Spring Boot
+- Spring Core
+- Spring Bean Scope
+- SLF4J
+- Maven
+
+## Run
+
+```bash
+mvn spring-boot:run
+```
+
+## Expected Output
+
+### Singleton Scope
+
+- Constructor called only once.
+- Same bean instance returned by Spring.
+
+### Prototype Scope
+
+- Constructor called twice.
+- New bean instance created for every `getBean()` call.
+
+## Status
+
+✔ Completed
