@@ -117,3 +117,48 @@ mvn spring-boot:run
 ## Status
 
 Completed
+
+---
+
+# Hands-on 4
+
+## Title
+
+Spring Core - Load Country from Spring Configuration XML
+
+## Objective
+
+- Create a Country bean using Spring XML configuration.
+- Load the bean using ApplicationContext.
+- Display Country details using logging.
+- Understand Spring Bean configuration using XML.
+
+## Technologies
+
+- Java 17
+- Spring Boot
+- Spring Core
+- Spring XML Configuration
+- SLF4J
+- Maven
+
+## Run
+
+```bash
+mvn spring-boot:run
+```
+
+## Expected Output
+
+- START log for displayDate()
+- Parsed Date in DEBUG log
+- END log
+- START log for displayCountry()
+- Country Constructor invoked
+- Setter methods invoked
+- Country details displayed
+- END log
+
+## Status
+
+✔ Completed
