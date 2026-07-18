@@ -6,6 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Service;
 
+import com.cognizant.springlearn.exception.CountryNotFoundException;
 import com.cognizant.springlearn.model.Country;
 
 @Service
@@ -27,6 +28,6 @@ public class CountryService {
 
         }
 
-        return null;
+        throw new CountryNotFoundException();
     }
 }

@@ -250,3 +250,62 @@ http://localhost:8083/countries/in
 ## Status
 
 ✔ Completed
+
+---
+
+# Hands-on 6
+
+## Title
+
+REST - Get Country Exceptional Scenario
+
+## Objective
+
+- Create a custom exception.
+- Return HTTP 404 when the country code is not found.
+- Use `@ResponseStatus` for exception handling.
+- Test the service using Browser, Postman and curl.
+
+## Technologies
+
+- Java 17
+- Spring Boot
+- Spring Web
+- Spring Core
+- REST API
+- Exception Handling
+- SLF4J
+- Maven
+
+## Run
+
+```bash
+mvn spring-boot:run
+```
+
+## Test URLs
+
+```
+http://localhost:8083/countries/IN
+http://localhost:8083/countries/AZ
+```
+
+## Expected Output
+
+### Valid Request
+
+```json
+{
+  "code": "IN",
+  "name": "India"
+}
+```
+
+### Invalid Request
+
+- HTTP Status: **404 Not Found**
+- Message: **Country not found**
+
+## Status
+
+✔ Completed

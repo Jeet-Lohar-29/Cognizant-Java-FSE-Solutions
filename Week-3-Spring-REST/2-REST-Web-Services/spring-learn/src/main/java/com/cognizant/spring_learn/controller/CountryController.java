@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cognizant.springlearn.model.Country;
 import com.cognizant.springlearn.service.CountryService;
 
+import com.cognizant.springlearn.exception.CountryNotFoundException;
+
 @RestController
 public class CountryController {
 
@@ -58,7 +60,8 @@ public class CountryController {
     }
 
     @GetMapping("/countries/{code}")
-    public Country getCountry(@PathVariable String code) {
+    public Country getCountry(@PathVariable String code)
+            throws CountryNotFoundException {
 
         LOGGER.info("START");
 
