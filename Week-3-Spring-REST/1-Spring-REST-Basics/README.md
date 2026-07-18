@@ -32,3 +32,50 @@ mvn clean install
 ## Status
 
 ✔ Completed
+
+---
+
+# Hands-on 2
+
+## Title
+
+Load SimpleDateFormat from Spring Configuration XML
+
+## Objective
+
+- Create Spring XML Configuration.
+- Define a SimpleDateFormat bean.
+- Load the bean using ApplicationContext.
+- Parse a date using the configured bean.
+
+## Bean
+
+Pattern:
+
+dd/MM/yyyy
+
+## Technologies
+
+- Java 17
+- Spring Boot
+- Spring Core
+- Maven
+
+## Run
+
+```bash
+mvn spring-boot:run
+```
+
+## Expected Output
+
+```
+Mon Dec 31 00:00:00 IST 2018
+```
+
+## Status
+
+Completed
+
+---
+
