@@ -83,3 +83,53 @@ Hello World!!
 ## Status
 
 ✔ Completed
+
+---
+
+# Hands-on 3
+
+## Title
+
+REST - Country Web Service
+
+## Objective
+
+- Create a Country bean.
+- Load the Country bean from Spring XML.
+- Expose a REST endpoint that returns the Country object as JSON.
+- Test using Browser and Postman.
+
+## Technologies
+
+- Java 17
+- Spring Boot
+- Spring Web
+- Spring Core (XML Configuration)
+- REST API
+- SLF4J
+- Maven
+
+## Run
+
+```bash
+mvn spring-boot:run
+```
+
+## Test URL
+
+```
+http://localhost:8083/country
+```
+
+## Expected Output
+
+```json
+{
+  "code": "IN",
+  "name": "India"
+}
+```
+
+## Status
+
+✔ Completed
