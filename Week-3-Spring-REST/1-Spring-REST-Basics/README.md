@@ -81,3 +81,39 @@ Completed
 
 ---
 
+# Hands-on 3
+
+## Title
+
+Spring Core - Incorporate Logging
+
+## Objective
+
+- Configure Spring Boot logging.
+- Replace console printing with SLF4J logging.
+- Log START and END of the method.
+- Log parsed date using DEBUG level.
+
+## Technologies
+
+- Java 17
+- Spring Boot
+- SLF4J
+- Logback
+- Maven
+
+## Run
+
+```bash
+mvn spring-boot:run
+```
+
+## Expected Output
+
+- START log
+- Parsed date in DEBUG log
+- END log
+
+## Status
+
+Completed
