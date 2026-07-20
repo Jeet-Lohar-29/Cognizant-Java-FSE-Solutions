@@ -99,3 +99,61 @@ Password: pwd
 ## Status
 
 ✔ Completed
+
+---
+
+# Hands-on 3
+
+## Title
+
+Create Authentication Controller
+
+## Objective
+
+- Create `/authenticate` endpoint.
+- Read Authorization header using `@RequestHeader`.
+- Return a JSON object containing an empty JWT token.
+- Allow both USER and ADMIN roles to access the endpoint.
+
+## Technologies
+
+- Java 17
+- Spring Boot 3
+- Spring Security 6
+- Maven
+
+## Run
+
+```bash
+mvn spring-boot:run
+```
+
+## Test URL
+
+```
+GET /authenticate
+```
+
+## Credentials
+
+```
+user / pwd
+```
+
+or
+
+```
+admin / pwd
+```
+
+## Expected Output
+
+```json
+{
+  "token": ""
+}
+```
+
+## Status
+
+✔ Completed

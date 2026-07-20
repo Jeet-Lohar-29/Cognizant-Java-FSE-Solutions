@@ -48,11 +48,14 @@ public class SecurityConfig {
 
             .authorizeHttpRequests(auth -> auth
 
-                    .requestMatchers("/countries")
-                    .hasRole("USER")
+                .requestMatchers("/countries")
+                .hasRole("USER")
 
-                    .anyRequest()
-                    .authenticated())
+                .requestMatchers("/authenticate")
+                .hasAnyRole("USER", "ADMIN")
+
+                .anyRequest()
+                .authenticated())
 
             .httpBasic(Customizer.withDefaults());
 
