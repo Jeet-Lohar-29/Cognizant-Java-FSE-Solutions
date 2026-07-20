@@ -157,3 +157,62 @@ admin / pwd
 ## Status
 
 ✔ Completed
+
+---
+
+# Hands-on 4
+
+## Title
+
+Generate JWT Token
+
+## Objective
+
+- Decode the Authorization header.
+- Extract the username.
+- Generate a JWT token.
+- Return the generated token to the client.
+
+## Technologies
+
+- Java 17
+- Spring Boot 3
+- Spring Security 6
+- JJWT 0.9.0
+- Maven
+
+## Run
+
+```bash
+mvn spring-boot:run
+```
+
+## Test URL
+
+```
+GET /authenticate
+```
+
+## Credentials
+
+```
+user / pwd
+```
+
+or
+
+```
+admin / pwd
+```
+
+## Expected Output
+
+```json
+{
+  "token":"<generated-jwt-token>"
+}
+```
+
+## Status
+
+✔ Completed
