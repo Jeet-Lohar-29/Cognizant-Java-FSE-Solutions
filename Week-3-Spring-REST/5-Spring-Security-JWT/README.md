@@ -216,3 +216,55 @@ admin / pwd
 ## Status
 
 ✔ Completed
+
+---
+
+# Hands-on 5
+
+## Title
+
+Authorize Requests using JWT Filter
+
+## Objective
+
+- Create a JWT Authorization Filter.
+- Validate JWT tokens from the Authorization header.
+- Authenticate requests using the token.
+- Protect all REST APIs except `/authenticate`.
+
+## Technologies
+
+- Java 17
+- Spring Boot 3
+- Spring Security 6
+- JWT (jjwt 0.9.0)
+- Maven
+
+## Run
+
+```bash
+mvn spring-boot:run
+```
+
+## Test
+
+Generate Token
+
+```bash
+curl -u user:pwd http://localhost:8083/authenticate
+```
+
+Access Protected API
+
+```bash
+curl -H "Authorization: Bearer <JWT_TOKEN>" http://localhost:8083/countries
+```
+
+## Expected Output
+
+- Valid JWT → Countries JSON
+- Invalid JWT → 401 Unauthorized
+
+## Status
+
+✔ Completed
