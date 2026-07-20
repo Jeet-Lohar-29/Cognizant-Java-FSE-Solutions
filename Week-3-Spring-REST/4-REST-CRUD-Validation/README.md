@@ -255,21 +255,20 @@ PUT /employees
 
 ## Title
 
-Enhance Employee Validation and Global Exception Handling
+Implement REST DELETE Service
 
 ## Objective
 
-- Add Bean Validation to Employee, Department and Skill.
-- Annotate EmployeeNotFoundException with @ResponseStatus.
-- Handle invalid numeric formats globally.
-- Test Employee PUT service.
+- Implement DELETE REST endpoint for Employee.
+- Delete employee by ID.
+- Throw EmployeeNotFoundException if employee does not exist.
+- Verify deletion using GET request.
 
 ## Technologies
 
 - Java 17
 - Spring Boot
-- Spring Validation
-- Jackson
+- Spring Web
 - REST API
 - Maven
 
@@ -282,7 +281,25 @@ mvn spring-boot:run
 ## Test URL
 
 ```
-PUT /employees
+DELETE http://localhost:8083/employees/{id}
+```
+
+Example
+
+```
+DELETE http://localhost:8083/employees/1
+```
+
+## Expected Output
+
+```
+Employee deleted successfully
+```
+
+If employee ID is invalid:
+
+```
+404 NOT FOUND
 ```
 
 ## Status

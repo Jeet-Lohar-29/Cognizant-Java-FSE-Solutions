@@ -59,4 +59,13 @@ public class EmployeeDao {
                         + employee.getId()
                         + " not found");
     }
+
+    public void deleteEmployee(int id) throws EmployeeNotFoundException {
+
+        boolean removed = employeeList.removeIf(emp -> emp.getId() == id);
+
+        if (!removed) {
+            throw new EmployeeNotFoundException("Employee not found");
+        }
+    }
 }

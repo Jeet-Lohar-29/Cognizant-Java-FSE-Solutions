@@ -24,4 +24,8 @@ public class EmployeeService {
 
         return employeeDao.updateEmployee(employee);
     }
+
+    public void deleteEmployee(int id) throws EmployeeNotFoundException {
+        employeeDao.deleteEmployee(id);
+    }
 }
