@@ -1,22 +1,22 @@
-package com.cognizant.springlearn.controller;
+package com.cognizant.spring_learn.controller;
 
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cognizant.springlearn.model.Country;
-import com.cognizant.springlearn.service.CountryService;
-
-import com.cognizant.springlearn.exception.CountryNotFoundException;
+import com.cognizant.spring_learn.exception.CountryNotFoundException;
+import com.cognizant.spring_learn.model.Country;
+import com.cognizant.spring_learn.service.CountryService;
 
 @RestController
 @RequestMapping("/countries")
@@ -29,22 +29,6 @@ public class CountryController {
     private CountryService countryService;
 
     @GetMapping
-    public Country getCountryIndia() {
-
-        LOGGER.info("START");
-
-        ApplicationContext context =
-                new ClassPathXmlApplicationContext("country.xml");
-
-        Country country =
-                context.getBean("country", Country.class);
-
-        LOGGER.info("END");
-
-        return country;
-    }
-
-    @GetMapping("/all")
     public List<Country> getAllCountries() {
 
         LOGGER.info("START");
@@ -60,13 +44,25 @@ public class CountryController {
         return countryList;
     }
 
-    @GetMapping("/countries/{code}")
+    @GetMapping("/{code}")
     public Country getCountry(@PathVariable String code)
             throws CountryNotFoundException {
 
         LOGGER.info("START");
 
         Country country = countryService.getCountry(code);
+
+        LOGGER.info("END");
+
+        return country;
+    }
+
+    @PostMapping
+    public Country addCountry(@RequestBody Country country) {
+
+        LOGGER.info("START");
+
+        LOGGER.debug("Country Received : {}", country);
 
         LOGGER.info("END");
 
