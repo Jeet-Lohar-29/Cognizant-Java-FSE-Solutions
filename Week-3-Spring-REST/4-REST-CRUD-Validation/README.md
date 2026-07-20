@@ -1,4 +1,4 @@
-# Module 4-REST-CRUD-Validation
+# Module 4
 
 ---
 
@@ -6,14 +6,14 @@
 
 ## Title
 
-REST API Naming Convention
+REST Resource Naming & POST Country REST Service
 
 ## Objective
 
 - Follow REST resource naming guidelines.
-- Use class-level `@RequestMapping`.
-- Update endpoint mappings using `@GetMapping`.
-- Keep the resource URL consistent for all HTTP methods.
+- Implement GET and POST REST services.
+- Read JSON request using `@RequestBody`.
+- Test using Browser, Postman and curl.
 
 ## Technologies
 
@@ -32,9 +32,27 @@ mvn spring-boot:run
 ## Test URLs
 
 ```
-GET /countries
-GET /countries/all
-GET /countries/IN
+GET  http://localhost:8083/countries
+GET  http://localhost:8083/countries/IN
+POST http://localhost:8083/countries
+```
+
+## Sample Request
+
+```json
+{
+  "code": "IN",
+  "name": "India"
+}
+```
+
+## Expected Output
+
+```json
+{
+  "code": "IN",
+  "name": "India"
+}
 ```
 
 ## Status
