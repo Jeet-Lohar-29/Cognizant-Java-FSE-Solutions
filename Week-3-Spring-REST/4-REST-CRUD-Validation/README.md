@@ -248,3 +248,43 @@ PUT /employees
 ## Status
 
 ✔ Completed
+
+---
+
+# Hands-on 5
+
+## Title
+
+Enhance Employee Validation and Global Exception Handling
+
+## Objective
+
+- Add Bean Validation to Employee, Department and Skill.
+- Annotate EmployeeNotFoundException with @ResponseStatus.
+- Handle invalid numeric formats globally.
+- Test Employee PUT service.
+
+## Technologies
+
+- Java 17
+- Spring Boot
+- Spring Validation
+- Jackson
+- REST API
+- Maven
+
+## Run
+
+```bash
+mvn spring-boot:run
+```
+
+## Test URL
+
+```
+PUT /employees
+```
+
+## Status
+
+✔ Completed

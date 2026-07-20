@@ -1,8 +1,17 @@
 package com.cognizant.spring_learn.model;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 public class Department {
 
-    private int id;
+    @NotNull(message = "Department Id cannot be null")
+    private Integer id;
+
+    @NotBlank(message = "Department name cannot be blank")
+    @Size(min = 1, max = 30,
+        message = "Department name should contain 1 to 30 characters")
     private String name;
 
     public Department() {

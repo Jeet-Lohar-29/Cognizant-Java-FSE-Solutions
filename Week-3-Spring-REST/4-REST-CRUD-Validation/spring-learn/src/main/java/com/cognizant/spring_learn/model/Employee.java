@@ -3,23 +3,35 @@ package com.cognizant.spring_learn.model;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 public class Employee {
 
     @NotNull(message = "Employee Id cannot be null")
     private Integer id;
 
-    @NotBlank(message = "Employee name cannot be empty")
+    @NotBlank(message = "Employee name cannot be blank")
+    @Size(min = 1, max = 30,
+        message = "Employee name should contain 1 to 30 characters")
     private String name;
 
-    private double salary;
+    @NotNull(message = "Salary cannot be null")
+    @Min(value = 0,
+        message = "Salary should be zero or above")
+    private Double salary;
 
-    private boolean permanent;
+    @NotNull(message = "Permanent cannot be null")
+    private Boolean permanent;
 
-    @NotNull(message = "Date of birth is required")
+    @NotNull(message = "Date of Birth cannot be null")
+    @JsonFormat(shape = JsonFormat.Shape.STRING,
+                pattern = "dd/MM/yyyy")
     private Date dateOfBirth;
 
     @Valid

@@ -1,8 +1,17 @@
 package com.cognizant.spring_learn.model;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 public class Skill {
 
-    private int id;
+    @NotNull(message = "Skill Id cannot be null")
+    private Integer id;
+
+    @NotBlank(message = "Skill name cannot be blank")
+    @Size(min = 1, max = 30,
+        message = "Skill name should contain 1 to 30 characters")
     private String name;
 
     public Skill() {
