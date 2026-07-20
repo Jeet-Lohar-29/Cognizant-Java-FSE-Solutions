@@ -42,3 +42,60 @@ http://localhost:8083/countries
 ## Status
 
 ✔ Completed
+
+---
+
+# Hands-on 2
+
+## Title
+
+Create In-Memory Users and Roles
+
+## Objective
+
+- Create two in-memory users:
+  - admin (ROLE_ADMIN)
+  - user (ROLE_USER)
+- Restrict `/countries` endpoint to ROLE_USER.
+- Authenticate using HTTP Basic Authentication.
+
+## Technologies
+
+- Java 17
+- Spring Boot 3
+- Spring Security 6
+- Maven
+
+## Run
+
+```bash
+mvn spring-boot:run
+```
+
+## Test URLs
+
+```
+GET /countries
+```
+
+### Credentials
+
+```
+Username: user
+Password: pwd
+```
+
+```
+Username: admin
+Password: pwd
+```
+
+## Expected Results
+
+- user → 200 OK
+- admin → 403 Forbidden
+- wrong password → 401 Unauthorized
+
+## Status
+
+✔ Completed
