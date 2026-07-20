@@ -119,3 +119,63 @@ POST /countries
 ## Status
 
 ✔ Completed
+
+---
+
+# Hands-on 3
+
+## Title
+
+Global Exception Handling for Validation Errors
+
+## Objective
+
+- Create a global exception handler using `@ControllerAdvice`.
+- Extend `ResponseEntityExceptionHandler`.
+- Replace manual validation with `@Valid`.
+- Return structured validation error responses.
+
+## Technologies
+
+- Java 17
+- Spring Boot
+- Spring Validation
+- REST API
+- Maven
+
+## Run
+
+```bash
+mvn spring-boot:run
+```
+
+## Test URL
+
+```
+POST /countries
+```
+
+## Invalid Request
+
+```json
+{
+  "code": "I",
+  "name": "India"
+}
+```
+
+## Expected Response
+
+```json
+{
+  "timestamp": "...",
+  "status": 400,
+  "errors": [
+    "Country code should be 2 characters"
+  ]
+}
+```
+
+## Status
+
+✔ Completed
