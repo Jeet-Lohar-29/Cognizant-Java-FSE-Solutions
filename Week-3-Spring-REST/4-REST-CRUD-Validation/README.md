@@ -179,3 +179,72 @@ POST /countries
 ## Status
 
 ✔ Completed
+
+---
+
+# Hands-on 4 (Part A)
+
+## Title
+
+Create Employee Model Classes
+
+## Objective
+
+- Create Employee model.
+- Create Department model.
+- Create Skill model.
+- Add Bean Validation annotations.
+- Create EmployeeNotFoundException.
+
+## Technologies
+
+- Java 17
+- Spring Boot
+- Jakarta Validation
+- Maven
+
+## Status
+
+✔ Completed
+
+---
+
+# Hands-on 4 (Part B)
+
+## Title
+
+Update Employee using REST PUT
+
+## Objective
+
+- Create Employee DAO.
+- Create Employee Service.
+- Create Employee Controller.
+- Implement PUT `/employees`.
+- Update employee using in-memory data.
+
+## Technologies
+
+- Java 17
+- Spring Boot
+- Spring Web
+- Jakarta Validation
+- Maven
+
+## Run
+
+```bash
+mvn spring-boot:run
+```
+
+## Test URL
+
+```
+GET /employees
+
+PUT /employees
+```
+
+## Status
+
+✔ Completed
