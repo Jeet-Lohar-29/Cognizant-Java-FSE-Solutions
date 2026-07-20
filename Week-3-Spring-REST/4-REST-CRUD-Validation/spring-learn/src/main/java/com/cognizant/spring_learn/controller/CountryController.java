@@ -18,6 +18,18 @@ import com.cognizant.spring_learn.exception.CountryNotFoundException;
 import com.cognizant.spring_learn.model.Country;
 import com.cognizant.spring_learn.service.CountryService;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.Validation;
+import jakarta.validation.Validator;
+import jakarta.validation.ValidatorFactory;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
+
 @RestController
 @RequestMapping("/countries")
 public class CountryController {
@@ -57,15 +69,35 @@ public class CountryController {
         return country;
     }
 
-    @PostMapping
-    public Country addCountry(@RequestBody Country country) {
+        @PostMapping
+        public Country addCountry(@RequestBody Country country) {
 
         LOGGER.info("START");
 
-        LOGGER.debug("Country Received : {}", country);
+        LOGGER.debug("Country : {}", country);
+
+        ValidatorFactory factory =
+                Validation.buildDefaultValidatorFactory();
+
+        Validator validator = factory.getValidator();
+
+        Set<ConstraintViolation<Country>> violations =
+                validator.validate(country);
+
+        List<String> errors = new ArrayList<>();
+
+        for (ConstraintViolation<Country> violation : violations) {
+                errors.add(violation.getMessage());
+        }
+
+        if (!violations.isEmpty()) {
+                throw new ResponseStatusException(
+                        HttpStatus.BAD_REQUEST,
+                        errors.toString());
+        }
 
         LOGGER.info("END");
 
         return country;
-    }
+        }
 }

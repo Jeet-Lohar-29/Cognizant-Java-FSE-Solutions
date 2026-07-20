@@ -58,3 +58,64 @@ POST http://localhost:8083/countries
 ## Status
 
 ✔ Completed
+
+---
+
+# Hands-on 2
+
+## Title
+
+Validate Country Code in REST POST Request
+
+## Objective
+
+- Validate Country Code.
+- Use Bean Validation annotations.
+- Return HTTP 400 for invalid input.
+
+## Technologies
+
+- Java 17
+- Spring Boot
+- Spring Validation
+- REST API
+- Maven
+
+## Run
+
+```bash
+mvn spring-boot:run
+```
+
+## Test URL
+
+```
+POST /countries
+```
+
+## Valid Request
+
+```json
+{
+  "code":"IN",
+  "name":"India"
+}
+```
+
+## Invalid Request
+
+```json
+{
+  "code":"I",
+  "name":"India"
+}
+```
+
+## Expected Result
+
+- Valid request → Country returned.
+- Invalid request → HTTP 400 Bad Request.
+
+## Status
+
+✔ Completed
