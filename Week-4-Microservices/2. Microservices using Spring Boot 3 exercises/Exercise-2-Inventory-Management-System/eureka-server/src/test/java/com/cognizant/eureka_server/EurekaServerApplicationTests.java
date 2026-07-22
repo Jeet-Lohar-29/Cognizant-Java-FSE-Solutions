@@ -1,0 +1,13 @@
+package com.cognizant.eureka_server;
+
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
+
+@Disabled
+class EurekaServerApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
