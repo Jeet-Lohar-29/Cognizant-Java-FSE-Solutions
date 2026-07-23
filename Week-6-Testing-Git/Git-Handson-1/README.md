@@ -33,3 +33,8 @@ git push -u origin main
 
 ## Result
 The local repository was successfully created and pushed to GitHub.
+
+## GitDemo was created as a separate remote repository and pushed to:
+```bash
+https://github.com/Jeet-Lohar-29/GitDemo
+```
