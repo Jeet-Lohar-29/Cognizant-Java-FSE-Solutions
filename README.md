@@ -1,8 +1,8 @@
 # Cognizant Java FSE Solutions
 
-## Java Full Stack Engineer (Digital Nurture 4.0) Learning Repository
+## Java Full Stack Engineer (Digital Nurture 5.0) Learning Repository
 
-This repository contains my complete solutions, hands-on exercises, projects, notes, and theoretical documentation for the **Cognizant Digital Nurture 4.0 - Java Full Stack Engineer (FSE)** program.
+This repository contains my complete solutions, hands-on exercises, projects, notes, and theoretical documentation for the **Cognizant Digital Nurture 5.0 - Java Full Stack Engineer (FSE)** program.
 
 The repository is organized week-wise according to the official Cognizant curriculum and includes practical implementations, Git exercises, React projects, Spring Boot applications, Microservices, and theoretical documentation for DevOps, Cloud, Docker, and Generative AI.
 
