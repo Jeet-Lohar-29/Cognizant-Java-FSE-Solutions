@@ -1,0 +1,22 @@
+.card {
+    border: 1px solid #ccc;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.light {
+    background: #1976d2;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    cursor: pointer;
+}
+
+.dark {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    cursor: pointer;
+}
